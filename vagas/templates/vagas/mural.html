@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Mural de vagas | DevElas</title>
+</head>
+<body>
+    <a href="{% url 'home' %}">Voltar para a Home</a>
+    
+    <h1>Mural de vagas</h1>
+    <p>{{ total }} vagas esperando por você.</p>
+
+    <!-- O ciclo for do Django que percorre todas as vagas vindas do Python -->
+    {% for vaga in vagas %}
+        <h2>{{ vaga.titulo }}</h2>
+        <p>{{ vaga.empresa }} · {{ vaga.cidade }}</p>
+        <p>{{ vaga.area }} · {{ vaga.nivel }} · {{ vaga.modalidade }}</p>
+        
+        <!-- Lista de competências (skills) de cada vaga -->
+        <ul>
+            {% for skill in vaga.skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+        
+        <hr>
+    {% empty %}
+        <p>Nenhuma vaga por aqui ainda.</p>
+    {% endfor %}
+</body>
+</html>
