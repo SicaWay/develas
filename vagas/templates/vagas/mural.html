@@ -12,7 +12,7 @@
 
     <!-- O ciclo for do Django que percorre todas as vagas vindas do Python -->
     {% for vaga in vagas %}
-        <h2>{{ vaga.titulo }}</h2>
+        <h2><a href="{% url 'detalhe_vaga' vaga.id %}">{{ vaga.titulo }}</a></h2>
         <p>{{ vaga.empresa }} · {{ vaga.cidade }}</p>
         <p>{{ vaga.area }} · {{ vaga.nivel }} · {{ vaga.modalidade }}</p>
         
