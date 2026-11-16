@@ -8,21 +8,13 @@
     <a href="{% url 'home' %}">Voltar para a Home</a>
     
     <h1>Mural de vagas</h1>
-    <p>{{ total }} vagas esperando por você.</p>
+    <p>{{ total }} vagas esperando por você ({{ remotas }} remotas).</p>
 
-    <!-- O ciclo for do Django que percorre todas as vagas vindas do Python -->
     {% for vaga in vagas %}
-        <h2><a href="{% url 'detalhe_vaga' vaga.id %}">{{ vaga.titulo }}</a></h2>
+        <h2>{{ forloop.counter }}. <a href="{% url 'detalhe_vaga' vaga.id %}">{{ vaga.titulo }}</a></h2>
         <p>{{ vaga.empresa }} · {{ vaga.cidade }}</p>
         <p>{{ vaga.area }} · {{ vaga.nivel }} · {{ vaga.modalidade }}</p>
-        
-        <!-- Lista de competências (skills) de cada vaga -->
-        <ul>
-            {% for skill in vaga.skills %}
-                <li>{{ skill }}</li>
-            {% endfor %}
-        </ul>
-        
+        <p><strong>Skills:</strong> {{ vaga.skills|join:", " }}</p>
         <hr>
     {% empty %}
         <p>Nenhuma vaga por aqui ainda.</p>
