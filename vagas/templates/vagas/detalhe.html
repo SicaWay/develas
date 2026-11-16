@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>{{ vaga.titulo }} | DevElas</title>
+</head>
+<body>
+    <a href="{% url 'mural' %}">Voltar para o mural</a>
+
+    <h1>{{ vaga.titulo }}</h1>
+    <p>{{ vaga.empresa }} · {{ vaga.cidade }}</p>
+    <p>{{ vaga.area }} · {{ vaga.nivel }} · {{ vaga.modalidade }}</p>
+
+    <h2>Sobre a vaga</h2>
+    <p>{{ vaga.descricao|default:"Descrição em breve." }}</p>
+
+    <h2>Skills pedidas</h2>
+    <ul>
+        {% for skill in vaga.skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    <a href="{% url 'mural' %}?modalidade={{ vaga.modalidade|urlencode }}">Ver mais vagas na modalidade {{ vaga.modalidade }}</a>
+</body>
+</html>

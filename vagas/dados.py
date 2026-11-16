@@ -8,6 +8,7 @@ VAGAS = [
         "nivel": "Júnior",
         "modalidade": "Híbrido",
         "skills": ["Python", "Django", "Git"],
+        "descricao": "Você vai entrar no time que cuida do back-end da nossa plataforma de agendamentos, criando funcionalidades novas em Python e Django. Temos mentoria semanal para quem está começando.",
     },
     {
         "id": 2,
@@ -18,6 +19,8 @@ VAGAS = [
         "nivel": "Pleno",
         "modalidade": "Remoto",
         "skills": ["JavaScript", "React", "CSS"],
+        "descricao": "Apoie o time de dados organizando informações e montando relatórios com Python e SQL. Ideal para quem gosta de descobrir histórias escondidas nos números.",
+
     },
     {
         "id": 3,
@@ -28,6 +31,7 @@ VAGAS = [
         "nivel": "Júnior",
         "modalidade": "Híbrido",
         "skills": ["Python", "SQL", "Pandas"],
+        "descricao": "Construa telas bonitas e acessíveis para os sites dos nossos clientes, trabalhando lado a lado com o time de design.",
     },
     {
         "id": 4,
@@ -38,6 +42,7 @@ VAGAS = [
         "nivel": "Pleno",
         "modalidade": "Remoto",
         "skills": ["Python", "JavaScript", "Django"],
+        "descricao": "Ajude as pessoas que usam nossos sistemas a resolver problemas de computadores e redes, e aprenda na prática o dia a dia de uma equipe de TI.",
     },
     {
         "id": 5,
@@ -48,6 +53,7 @@ VAGAS = [
         "nivel": "Júnior",
         "modalidade": "Presencial",
         "skills": ["Linux", "Redes", "Python"],
+        "descricao": "Converse com quem usa nossos aplicativos, descubra o que pode melhorar e transforme essas descobertas em protótipos no Figma.",
     },
     {
         "id": 6,
@@ -58,6 +64,7 @@ VAGAS = [
         "nivel": "Júnior",
         "modalidade": "Remoto",
         "skills": ["Python"],
+        "descricao": "Atuação no desenvolvimento e manutenção de serviços back-end em Python, integrando APIs e garantindo a qualidade do código em equipa.",
     },
     {
         "id": 7,
@@ -68,6 +75,7 @@ VAGAS = [
         "nivel": "Júnior",
         "modalidade": "Remoto",
         "skills": ["HTML", "CSS", "JavaScript"],
+        "descricao": "Criação de interfaces web responsivas e acessíveis utilizando HTML, CSS e JavaScript para melhorar a experiência de compra.",
     },
     {
         "id": 8,
@@ -78,5 +86,6 @@ VAGAS = [
         "nivel": "Júnior",
         "modalidade": "Híbrido",
         "skills": ["Python", "SQL"],
+        "descricao": "Análise e extração de dados com Python e SQL para apoiar a tomada de decisão estratégica nas áreas de negócio."
     },
 ]

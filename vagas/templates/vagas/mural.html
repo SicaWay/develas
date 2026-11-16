@@ -6,12 +6,25 @@
 </head>
 <body>
     <a href="{% url 'home' %}">Voltar para a Home</a>
-    
+
     <h1>Mural de vagas</h1>
-    <p>{{ total }} vagas esperando por você ({{ remotas }} remotas).</p>
+
+    <p>
+        Filtrar:
+        <a href="{% url 'mural' %}">Todas</a> ·
+        <a href="{% url 'mural' %}?modalidade=Remoto">Remoto</a> ·
+        <a href="{% url 'mural' %}?modalidade=Híbrido">Híbrido</a> ·
+        <a href="{% url 'mural' %}?modalidade=Presencial">Presencial</a>
+    </p>
+
+    {% if modalidade %}
+        <p>{{ total }} vaga{{ total|pluralize }} na modalidade {{ modalidade }}.</p>
+    {% else %}
+        <p>{{ total }} vaga{{ total|pluralize }} esperando por você.</p>
+    {% endif %}
 
     {% for vaga in vagas %}
-        <h2>{{ forloop.counter }}. <a href="{% url 'detalhe_vaga' vaga.id %}">{{ vaga.titulo }}</a></h2>
+        <h2>{{ forloop.counter }}. <a href="{% url 'detalhe' vaga.id %}">{{ vaga.titulo }}</a></h2>
         <p>{{ vaga.empresa }} · {{ vaga.cidade }}</p>
         <p>{{ vaga.area }} · {{ vaga.nivel }} · {{ vaga.modalidade }}</p>
         <p><strong>Skills:</strong> {{ vaga.skills|join:", " }}</p>

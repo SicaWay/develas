@@ -1,31 +1,29 @@
 from django.shortcuts import render
+from django.http import Http404
 from vagas.dados import VAGAS
 
 def home(request):
-    return render(request, "vagas/home.html")
+    return render(request, "vagas/home.html", {"total": len(VAGAS)})
 
 def mural(request):
-    remotas = 0
-    for vaga in VAGAS:
-        if vaga["modalidade"] == "Remoto":
-            remotas = remotas + 1
+    modalidade = request.GET.get("modalidade", "")
+    if modalidade:
+        vagas = []
+        for vaga in VAGAS:
+            if vaga["modalidade"] == modalidade:
+                vagas.append(vaga)
+    else:
+        vagas = VAGAS
 
     contexto = {
-        "vagas": VAGAS,
-        "total": len(VAGAS),
-        "remotas": remotas,
+        "vagas": vagas,
+        "total": len(vagas),
+        "modalidade": modalidade,
     }
     return render(request, "vagas/mural.html", contexto)
 
-def detalhe_vaga(request, vaga_id):
-    # Procura na lista VAGAS aquela cujo id corresponde ao parâmetro da URL
-    vaga_encontrada = None
+def detalhe(request, vaga_id):
     for vaga in VAGAS:
         if vaga["id"] == vaga_id:
-            vaga_encontrada = vaga
-            break
-            
-    contexto = {
-        "vaga": vaga_encontrada
-    }
-    return render(request, "vagas/detalhe.html", contexto)
+            return render(request, "vagas/detalhe.html", {"vaga": vaga})
+    raise Http404("Vaga não encontrada")
