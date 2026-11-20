@@ -1,0 +1,361 @@
+/* ==========================================================================
+   TOKENS DE DESIGN DEVELAS — ESCURO (ALTO CONTRASTE) E CLARO
+   ========================================================================== */
+:root {
+    --brand-lime: #9FF24B;
+    --brand-violet: #200940;
+    --brand-pink: #F277D1;
+    --brand-cyan: #00F0FF;
+
+    /* Fundo mais profundo para destacar o violeta e o neon */
+    --bg-page: #0D031B;
+    --bg-grid-1: rgba(159, 242, 75, 0.14);
+    --bg-grid-2: rgba(242, 119, 209, 0.20);
+    --bg-line-1: rgba(242, 119, 209, 0.045);
+    --bg-line-2: rgba(0, 240, 255, 0.035);
+
+    /* Navbar no tom solicitado #220E3F */
+    --nav-bg: #220E3F;
+    --nav-border: rgba(242, 119, 209, 0.30);
+
+    --card-bg: rgba(26, 9, 52, 0.88);
+    /* Hero com iluminação central suave para a logo ficar 100% legível */
+    --hero-bg: radial-gradient(circle at 28% 45%, rgba(124, 77, 189, 0.34) 0%, rgba(34, 13, 68, 0.94) 55%, rgba(18, 5, 38, 0.98) 100%);
+    --counter-bg: linear-gradient(160deg, rgba(24, 8, 48, 0.96) 0%, rgba(12, 3, 26, 0.98) 100%);
+    --counter-num-grad: linear-gradient(135deg, #9FF24B 15%, #00F0FF 55%, #F277D1 95%);
+
+    --text-main: #FDF9FF;
+    --text-secondary: #D4C2E8;
+    --accent-lime: #9FF24B;
+    --accent-pink: #F277D1;
+
+    --border-card: rgba(242, 119, 209, 0.34);
+    --shadow-card: 0 18px 42px -10px rgba(0, 0, 0, 0.82), 0 0 26px -8px rgba(242, 119, 209, 0.22);
+    --shadow-hover: 0 22px 48px -10px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(159, 242, 75, 0.30);
+
+    --btn-grad: linear-gradient(135deg, #F277D1 0%, #A938D9 100%);
+    --btn-shadow: 0 8px 22px -4px rgba(242, 119, 209, 0.55);
+
+    --chip-bg: rgba(34, 13, 68, 0.82);
+    --chip-text: #D4C2E8;
+    --chip-border: rgba(242, 119, 209, 0.30);
+
+    --badge-area-bg: rgba(159, 242, 75, 0.14);
+    --badge-area-text: #9FF24B;
+    --badge-area-border: rgba(159, 242, 75, 0.30);
+
+    --badge-mod-bg: rgba(242, 119, 209, 0.16);
+    --badge-mod-text: #F277D1;
+    --badge-mod-border: rgba(242, 119, 209, 0.38);
+
+    --circuit-opacity: 0.72;
+}
+
+/* ==========================================================================
+   SOBRESCRITA PARA O TEMA CLARO (LIGHT MODE)
+   ========================================================================== */
+[data-theme="light"] {
+    --bg-page: #FAF7FE;
+    --bg-grid-1: rgba(159, 242, 75, 0.26);
+    --bg-grid-2: rgba(242, 119, 209, 0.22);
+    --bg-line-1: rgba(32, 9, 64, 0.035);
+    --bg-line-2: rgba(32, 9, 64, 0.035);
+
+    --nav-bg: rgba(255, 255, 255, 0.90);
+    --nav-border: rgba(32, 9, 64, 0.10);
+
+    --card-bg: rgba(255, 255, 255, 0.94);
+    --hero-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 240, 254, 0.94) 100%);
+    --counter-bg: linear-gradient(155deg, #FFFFFF 0%, #F4ECFD 55%, rgba(242, 119, 209, 0.14) 100%);
+    --counter-num-grad: linear-gradient(135deg, #569E14 0%, #200940 52%, #B82993 100%);
+
+    --text-main: #200940;
+    --text-secondary: #584375;
+    --accent-lime: #3E780E;
+    --accent-pink: #B82993;
+
+    --border-card: rgba(242, 119, 209, 0.38);
+    --shadow-card: 0 14px 34px -10px rgba(32, 9, 64, 0.08), 0 4px 14px -4px rgba(242, 119, 209, 0.12);
+    --shadow-hover: 0 20px 42px -10px rgba(32, 9, 64, 0.14), 0 0 24px -4px rgba(159, 242, 75, 0.35);
+
+    --btn-grad: linear-gradient(135deg, #D946B5 0%, #7E22CE 100%);
+    --btn-shadow: 0 8px 20px -4px rgba(184, 41, 147, 0.42);
+
+    --chip-bg: #FFFFFF;
+    --chip-text: #584375;
+    --chip-border: rgba(32, 9, 64, 0.14);
+
+    --badge-area-bg: #F3ECFC;
+    --badge-area-text: #200940;
+    --badge-area-border: rgba(32, 9, 64, 0.12);
+
+    --badge-mod-bg: rgba(242, 119, 209, 0.16);
+    --badge-mod-text: #B82993;
+    --badge-mod-border: rgba(242, 119, 209, 0.42);
+
+    --circuit-opacity: 0.42;
+}
+
+/* ==========================================================================
+   ESTILOS GLOBAIS E COMPONENTES
+   ========================================================================== */
+body.develas-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    background-image:
+        radial-gradient(circle at 12% 16%, var(--bg-grid-1) 0%, transparent 38%),
+        radial-gradient(circle at 88% 14%, var(--bg-grid-2) 0%, transparent 42%),
+        linear-gradient(var(--bg-line-1) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bg-line-2) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar com fundo #220E3F e logo limpa sem moldura ou brilho */
+.develas-navbar {
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.develas-navbar .navbar-brand {
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.2s ease;
+}
+
+.develas-navbar .navbar-brand:hover {
+    transform: scale(1.02);
+}
+
+.develas-logo-nav {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: none;
+}
+
+.develas-logo-hero {
+    max-width: 380px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: none;
+}
+
+/* Botão Alternador de Tema (Claro / Escuro) */
+.theme-toggle-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--badge-area-bg);
+    color: var(--accent-lime);
+    border: 1px solid var(--badge-area-border);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--accent-pink);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(242, 119, 209, 0.25);
+}
+
+/* Links do menu */
+.develas-nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.develas-nav-link:hover,
+.develas-nav-link.active {
+    color: var(--accent-lime) !important;
+}
+
+[data-theme="light"] .develas-nav-link.active {
+    color: var(--brand-violet) !important;
+    text-decoration: underline;
+    text-decoration-color: var(--brand-pink);
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 6px;
+}
+
+.develas-navbar .navbar-toggler {
+    border-color: var(--border-card);
+}
+[data-theme="light"] .develas-navbar .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Botões Pílula */
+.btn-develas-pill {
+    background: var(--btn-grad);
+    color: #FFFFFF !important;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    padding: 11px 28px;
+    box-shadow: var(--btn-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn-develas-pill:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 12px 26px -4px rgba(242, 119, 209, 0.65);
+}
+
+.btn-develas-outline {
+    background: var(--chip-bg);
+    color: var(--accent-lime) !important;
+    border: 1.5px solid var(--badge-area-border);
+    border-radius: 999px;
+    font-weight: 700;
+    padding: 10px 22px;
+    transition: all 0.2s ease;
+}
+
+.btn-develas-outline:hover {
+    border-color: var(--accent-lime);
+    transform: translateY(-1px);
+}
+
+/* Hero Section + Circuitos Neon */
+.develas-hero {
+    background: var(--hero-bg);
+    backdrop-filter: blur(16px);
+    border-radius: 28px;
+    border: 1px solid var(--border-card);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-circuit-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: var(--circuit-opacity);
+    z-index: 1;
+}
+
+.hero-z-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-counter-box {
+    background: var(--counter-bg);
+    border-radius: 24px;
+    border: 1.5px solid var(--border-card);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-counter-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18%;
+    right: 18%;
+    height: 3.5px;
+    background: linear-gradient(90deg, transparent, #9FF24B, #00F0FF, #F277D1, transparent);
+}
+
+.counter-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1;
+    background: var(--counter-num-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cards de Vagas e Informações */
+.develas-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    border: 1px solid var(--border-card);
+    box-shadow: var(--shadow-card);
+    color: var(--text-main);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.develas-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-lime);
+}
+
+.text-develas-main { color: var(--text-main); }
+.text-develas-sec { color: var(--text-secondary); }
+.text-develas-lime { color: var(--accent-lime); }
+.text-develas-pink { color: var(--accent-pink); }
+.font-mono-tech { font-family: 'JetBrains Mono', monospace; }
+
+/* Badges e Filtros */
+.badge-area {
+    background: var(--badge-area-bg);
+    color: var(--badge-area-text);
+    border: 1px solid var(--badge-area-border);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.76rem;
+    padding: 5px 12px;
+}
+
+.badge-mod {
+    background: var(--badge-mod-bg);
+    color: var(--badge-mod-text);
+    border: 1px solid var(--badge-mod-border);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.76rem;
+    padding: 5px 12px;
+}
+
+.filter-pill-btn {
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    border: 1px solid var(--chip-border);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 7px 18px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.filter-pill-btn:hover {
+    border-color: var(--accent-pink);
+    color: var(--text-main);
+}
+
+.filter-pill-btn.active {
+    background: var(--btn-grad);
+    color: #FFFFFF;
+    border-color: transparent;
+    box-shadow: var(--btn-shadow);
+}
+
+/* Rodapé */
+.develas-footer {
+    background: var(--nav-bg);
+    border-top: 1px solid var(--nav-border);
+    color: var(--text-secondary);
+}
