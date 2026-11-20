@@ -23,4 +23,5 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("vagas/", views.mural, name="mural"),
     path("vagas/<int:vaga_id>/", views.detalhe, name="detalhe"),
+    path("sobre/", views.sobre, name="sobre"),
 ]

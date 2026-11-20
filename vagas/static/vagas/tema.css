@@ -1,0 +1,481 @@
+/* ==========================================================================
+   TOKENS DE DESIGN DEVELAS — ESCURO (ALTO CONTRASTE) E CLARO
+   ========================================================================== */
+:root {
+    /* --- Paleta de cores principal da identidade visual DevElas --- */
+    --brand-lime: #9FF24B;
+    --brand-violet: #200940;
+    --brand-pink: #F277D1;
+    --brand-cyan: #00F0FF;
+
+    /* --- Fundo da página e grade pontilhada/quadriculada (Tema Escuro) --- */
+    --bg-page: #0D031B;
+    --bg-grid-1: rgba(159, 242, 75, 0.14);
+    --bg-grid-2: rgba(242, 119, 209, 0.20);
+    --bg-line-1: rgba(242, 119, 209, 0.045);
+    --bg-line-2: rgba(0, 240, 255, 0.035);
+
+    /* --- Barra de navegação superior (Navbar) --- */
+    --nav-bg: #220E3F;
+    --nav-border: rgba(242, 119, 209, 0.30);
+
+    /* --- Fundos dos cards e do banner principal (Hero) --- */
+    --card-bg: rgba(26, 9, 52, 0.88);
+    /* Hero com iluminação central suave para a logo ficar 100% legível */
+    --hero-bg: radial-gradient(circle at 28% 45%, rgba(124, 77, 189, 0.34) 0%, rgba(34, 13, 68, 0.94) 55%, rgba(18, 5, 38, 0.98) 100%);
+    --counter-bg: linear-gradient(160deg, rgba(24, 8, 48, 0.96) 0%, rgba(12, 3, 26, 0.98) 100%);
+    --counter-num-grad: linear-gradient(135deg, #9FF24B 15%, #00F0FF 55%, #F277D1 95%);
+
+
+    /* --- Tipografia e cores de destaque (Tema Escuro) --- */
+    --text-main: #FDF9FF;
+    --text-secondary: #D4C2E8;
+    --accent-lime: #9FF24B;
+    --accent-pink: #F277D1;
+
+    --border-card: rgba(242, 119, 209, 0.34);
+    --shadow-card: 0 18px 42px -10px rgba(0, 0, 0, 0.82), 0 0 26px -8px rgba(242, 119, 209, 0.22);
+    --shadow-hover: 0 22px 48px -10px rgba(0, 0, 0, 0.9), 0 0 30px -4px rgba(159, 242, 75, 0.30);
+
+    /* --- Botões principais ("Ver vagas", "Ver vaga", "Explorar vagas abertas") no Tema Escuro --- */
+    --btn-bg: rgba(159, 242, 75, 0.14);
+    --btn-bg-hover: rgba(159, 242, 75, 0.24);
+    --btn-text: #9FF24B;
+    --btn-border: rgba(159, 242, 75, 0.55);
+    --btn-shadow: 0 6px 20px -4px rgba(159, 242, 75, 0.25);
+    --btn-shadow-hover: 0 10px 26px -4px rgba(159, 242, 75, 0.42);
+
+    /* --- Botões de filtro do mural ("Todas", "Remoto", "Híbrido", "Presencial") --- */
+    --chip-bg: rgba(34, 13, 68, 0.82);
+    --chip-text: #D4C2E8;
+    --chip-border: rgba(242, 119, 209, 0.30);
+
+    /* Badges/botões das vagas no Tema Escuro (Área em rosa, Modalidade em verde-lima e Nível em rosa) */
+
+    /* Etiqueta de Área da vaga (ex: Back-end, Front-end, Dados) e badges da Home */
+    --badge-area-bg: rgba(242, 119, 209, 0.16);
+    --badge-area-text: #F277D1;
+    --badge-area-border: rgba(242, 119, 209, 0.38);
+
+    /* Etiqueta de Modalidade da vaga (ex: Remoto, Híbrido, Presencial) */
+    --badge-mod-bg: rgba(159, 242, 75, 0.14);
+    --badge-mod-text: #9FF24B;
+    --badge-mod-border: rgba(159, 242, 75, 0.30);
+
+    /* Etiqueta de Nível da vaga (ex: Júnior, Pleno, Sênior) */
+    --badge-nivel-bg: rgba(242, 119, 209, 0.16);
+    --badge-nivel-text: #F277D1;
+    --badge-nivel-border: rgba(242, 119, 209, 0.38);
+
+    --circuit-opacity: 0.72;
+}
+
+/* ==========================================================================
+   SOBRESCRITA PARA O TEMA CLARO (LIGHT MODE) — FUNDOS EM #FFF5FA
+   ========================================================================== */
+[data-theme="light"] {
+    --bg-page: #FFF5FA;
+    --bg-grid-1: rgba(62, 120, 14, 0.08); /* Ajustado para grid no tom verde leve */
+    --bg-grid-2: rgba(242, 119, 209, 0.12);
+    --bg-line-1: rgba(62, 120, 14, 0.025);
+    --bg-line-2: rgba(62, 120, 14, 0.025);
+
+     /* --- Barra de navegação superior (Navbar) --- */
+    --nav-bg: rgba(255, 245, 250, 0.92);
+    --nav-border: rgba(62, 120, 14, 0.10);
+
+    /* --- Fundos dos cards e do banner principal (Hero) --- */
+    --card-bg: rgba(255, 245, 250, 0.95);
+    --hero-bg: linear-gradient(145deg, rgba(255, 245, 250, 0.97) 0%, rgba(245, 248, 243, 0.94) 100%);
+    --counter-bg: linear-gradient(155deg, #FFF5FA 0%, #F1F7EC 55%, rgba(62, 120, 14, 0.08) 100%);
+    --counter-num-grad: linear-gradient(135deg, #3E780E 0%, #224207 100%);
+
+    /* Cores de Texto  */
+    --text-main: #200940; /* Preservado para leitura do título principal */
+    --text-secondary: #200940; /* Texto secundário em tom escuro para contraste */
+    --accent-lime: #1C736D;
+    --accent-pink: #F20587;
+
+    /* --- Bordas e sombras dos cards --- */
+    --border-card: rgba(62, 120, 14, 0.18);
+    --shadow-card: 0 14px 34px -10px rgba(62, 120, 14, 0.06), 0 4px 14px -4px rgba(62, 120, 14, 0.04);
+    --shadow-hover: 0 20px 42px -10px rgba(62, 120, 14, 0.10), 0 0 24px -4px rgba(159, 242, 75, 0.35);
+
+    /* Botão Ver Vagas Modo Claro */
+
+    /* --- Botões principais ("Ver vagas", "Ver vaga", "Explorar vagas abertas") --- */
+    --btn-bg: #F4FAF2; /* Cor de fundo do botão em repouso */
+    --btn-bg-hover: #E6F4E2; /* Cor de fundo do botão ao passar o mouse (hover) */
+    --btn-text: #1C736D; /* Cor do texto dentro do botão */
+    --btn-border: rgba(0, 184, 117, 0.65); /* Cor da borda arredondada do botão */
+    --btn-shadow: 0 6px 20px -4px rgba(0, 184, 117, 0.22); /* Sombra suave do botão em repouso */
+    --btn-shadow-hover: 0 10px 26px -4px rgba(0, 184, 117, 0.35); /* Sombra mais intensa ao passar o mouse */
+
+    /* --- Botões de filtro do mural ("Todas", "Remoto", "Híbrido", "Presencial") --- */
+    --chip-bg: #FFF5FA; /* Fundo dos botões de filtro não selecionados */
+    --chip-text: #200940; /* Cor do texto dos filtros */
+    --chip-border: rgba(242, 5, 135, 0.55); /* Borda dos botões de filtro */
+
+    /* Tema claro — Botoes  */
+
+    /* Etiqueta de Área da vaga  (ex: Back-end, Front-end, Dados) e  Curadoria */
+    --badge-area-bg: rgba(242, 119, 209, 0.10);
+    --badge-area-text: #F20587; 
+    --badge-area-border: rgba(242, 5, 135, 0.55);
+
+
+     /* Etiqueta de Modalidade da vaga e Filtros (ex: Remoto, Híbrido, Presencial) e Filtros */
+    --badge-mod-bg:  #F4FAF2;
+    --badge-mod-text: #1C736D; 
+    --badge-mod-border:  rgb(0, 184, 117);
+
+    /* Etiqueta de Nível da vaga (ex: Júnior, Pleno, Sênior) e Comunidade */
+    --badge-nivel-bg: rgba(242, 119, 209, 0.10);
+    --badge-nivel-text: #F20587;
+    --badge-nivel-border: rgba(242, 5, 135, 0.55);
+
+    --circuit-opacity: 0.25;
+}
+
+/* ==========================================================================
+   ESTILOS GLOBAIS E COMPONENTES
+   ========================================================================== */
+
+   /* Corpo principal da página com fonte Plus Jakarta Sans e fundo em grade */
+body.develas-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    background-image:
+        radial-gradient(circle at 12% 16%, var(--bg-grid-1) 0%, transparent 38%),
+        radial-gradient(circle at 88% 14%, var(--bg-grid-2) 0%, transparent 42%),
+        linear-gradient(var(--bg-line-1) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bg-line-2) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar com fundo #220E3F (escuro) e #FFF5FA (claro) */
+.develas-navbar {
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Link da logo na navbar sem moldura ou fundo */
+.develas-navbar .navbar-brand {
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    transition: transform 0.2s ease;
+}
+
+.develas-navbar .navbar-brand:hover {
+    transform: scale(1.02);
+}
+
+/* Tamanho da logo na barra superior */
+.develas-logo-nav {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: none;
+}
+
+/* Tamanho da logo grande no banner principal (Hero) */
+.develas-logo-hero {
+    max-width: 380px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: none;
+}
+
+/* ==========================================================================
+   BOTÃO ALTERNADOR DE TEMA (SWITCH SOL #F277D1 / LUA #8041D9)
+   ========================================================================== */
+
+/* Container que alinha o ícone do Sol, o switch e o ícone da Lua */
+.theme-switch-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Ícone do Sol (apagado no modo escuro, aceso em #F277D1 no modo claro) */
+.theme-icon-sun {
+    color: rgba(242, 119, 209, 0.45);
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+}
+
+[data-theme="light"] .theme-icon-sun {
+    color: #F277D1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px rgba(242, 119, 209, 0.55));
+}
+
+/* Ícone da Lua (aceso em #8041D9 no modo escuro, apagado no modo claro) */
+.theme-icon-moon {
+    color: #8041D9;
+    display: inline-flex;
+    align-items: center;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px rgba(128, 65, 217, 0.7));
+    transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+}
+
+[data-theme="light"] .theme-icon-moon {
+    color: rgba(128, 65, 217, 0.4);
+    transform: scale(1);
+    filter: none;
+}
+
+.theme-toggle-btn {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: #8041D9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.38);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle-btn::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 27px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.28);
+    transition: left 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Estado Modo Claro: trilho #F277D1 e bolinha branca à esquerda */
+[data-theme="light"] .theme-toggle-btn {
+    background: #F277D1;
+    box-shadow: inset 0 2px 4px rgba(150, 42, 122, 0.28);
+}
+
+[data-theme="light"] .theme-toggle-btn::after {
+    left: 3px;
+}
+
+.theme-toggle-btn:hover {
+    filter: brightness(1.06);
+}
+
+/* Links do menu */
+.develas-nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.develas-nav-link:hover,
+.develas-nav-link.active {
+    color: var(--accent-lime) !important;
+}
+
+[data-theme="light"] .develas-nav-link.active {
+    color: var(--brand-violet) !important;
+    text-decoration: underline;
+    text-decoration-color: var(--brand-pink);
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 6px;
+}
+
+.develas-navbar .navbar-toggler {
+    border-color: var(--border-card);
+}
+[data-theme="light"] .develas-navbar .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Botões Pílula — Verde (#9FF24B) no Escuro e Ciano (#3DF2F2) no Claro */
+.btn-develas-pill {
+    background: var(--btn-bg);
+    color: var(--btn-text) !important;
+    border: 1.5px solid var(--btn-border);
+    border-radius: 999px;
+    font-weight: 700;
+    padding: 11px 28px;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--btn-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-develas-pill:hover {
+    transform: translateY(-2px);
+    background: var(--btn-bg-hover);
+    box-shadow: var(--btn-shadow-hover);
+}
+/* Tamanho menor exclusivo para o botão "Ver vagas" no banner da página inicial (claro e escuro) */
+.develas-hero .btn-develas-pill {
+    padding: 7px 20px;
+    font-size: 0.9rem;
+}
+
+.btn-develas-outline {
+    background: var(--chip-bg);
+    color: var(--accent-lime) !important;
+    border: 1.5px solid var(--badge-area-border);
+    border-radius: 999px;
+    font-weight: 700;
+    padding: 10px 22px;
+    transition: all 0.2s ease;
+}
+
+.btn-develas-outline:hover {
+    border-color: var(--accent-lime);
+    transform: translateY(-1px);
+}
+
+/* Hero Section + Circuitos Neon */
+.develas-hero {
+    background: var(--hero-bg);
+    backdrop-filter: blur(16px);
+    border-radius: 28px;
+    border: 1px solid var(--border-card);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-circuit-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: var(--circuit-opacity);
+    z-index: 1;
+}
+
+.hero-z-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-counter-box {
+    background: var(--counter-bg);
+    border-radius: 24px;
+    border: 1.5px solid var(--border-card);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-counter-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18%;
+    right: 18%;
+    height: 3.5px;
+    background: linear-gradient(90deg, transparent, #9FF24B, #00F0FF, #F277D1, transparent);
+}
+
+.counter-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1;
+    background: var(--counter-num-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cards de Vagas e Informações */
+.develas-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    border: 1px solid var(--border-card);
+    box-shadow: var(--shadow-card);
+    color: var(--text-main);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.develas-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-lime);
+}
+
+.text-develas-main { color: var(--text-main); }
+.text-develas-sec { color: var(--text-secondary); }
+.text-develas-lime { color: var(--accent-lime); }
+.text-develas-pink { color: var(--accent-pink); }
+.font-mono-tech { font-family: 'JetBrains Mono', monospace; }
+
+/* Badges e Filtros */
+.badge-area {
+    background: var(--badge-area-bg);
+    color: var(--badge-area-text);
+    border: 1px solid var(--badge-area-border);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.76rem;
+    padding: 5px 12px;
+}
+
+.badge-mod {
+    background: var(--badge-mod-bg);
+    color: var(--badge-mod-text);
+    border: 1px solid var(--badge-mod-border);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.76rem;
+    padding: 5px 12px;
+}
+
+.badge-nivel {
+    background: var(--badge-nivel-bg);
+    color: var(--badge-nivel-text);
+    border: 1px solid var(--badge-nivel-border);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.76rem;
+    padding: 5px 12px;
+}
+
+.filter-pill-btn {
+    background: var(--chip-bg);
+    color: var(--chip-text);
+    border: 1px solid var(--chip-border);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 7px 18px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.filter-pill-btn:hover {
+    border-color: var(--accent-pink);
+    color: var(--text-main);
+}
+
+.filter-pill-btn.active {
+    background: var(--btn-bg-hover);
+    color: var(--btn-text);
+    border: 1.5px solid var(--btn-border);
+    box-shadow: var(--btn-shadow);
+}
+
+/* Rodapé */
+.develas-footer {
+    background: var(--nav-bg);
+    border-top: 1px solid var(--nav-border);
+    color: var(--text-secondary);
+}
