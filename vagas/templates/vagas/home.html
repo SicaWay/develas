@@ -55,7 +55,7 @@
             <a class="nav-link develas-nav-link active" href="{% url 'home' %}">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link develas-nav-link" href="{% url 'sobre' %}">Sobre o Coletivo</a>
+            <a class="nav-link develas-nav-link" href="{% url 'sobre' %}">Sobre</a>
           </li>
           <li class="nav-item">
             <a class="nav-link develas-nav-link" href="{% url 'mural' %}">Vagas</a>
@@ -67,51 +67,8 @@
 
   <main class="flex-grow-1 py-4 py-md-5">
     <div class="container">
-      <!-- Hero Card com Linhas Tecnológicas Neon e o botão Ver vagas -->
+      <!-- Hero Card com Imagem de Plano de Fundo por Tema (escuro.png / claro.png) e o botão Ver vagas -->
       <section class="develas-hero p-4 p-md-5 mb-5">
-
-        <svg class="hero-circuit-overlay" viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <defs>
-            <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="2.5" result="blur"/>
-              <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-
-          <!-- Trilhas superior esquerda elevadas para cima da logo (Verde-Lima) -->
-          <path d="M0 12H180L220 52H430" stroke="#9FF24B" stroke-width="1.6" filter="url(#neonGlow)"/>
-          <path d="M0 28H165L205 68H360" stroke="#9FF24B" stroke-width="1" stroke-opacity="0.65"/>
-          <circle cx="430" cy="52" r="4.5" fill="#9FF24B" filter="url(#neonGlow)"/>
-          <circle cx="360" cy="68" r="3" fill="#9FF24B"/>
-
-          <!-- Trilhas superior direita (Ciano Elétrico) -->
-          <path d="M1000 54H830L790 94H640" stroke="#00F0FF" stroke-width="1.5" filter="url(#neonGlow)"/>
-          <circle cx="640" cy="94" r="4" fill="#00F0FF" filter="url(#neonGlow)"/>
-
-          <!-- Trilhas inferior esquerda deslocadas para após o botão Ver vagas (Rosa Neon & Ciano paralelas) -->
-          <path d="M185 320V245L235 195H395" stroke="#F277D1" stroke-width="1.6" filter="url(#neonGlow)"/>
-          <path d="M203 320V252L242 213H372" stroke="#00F0FF" stroke-width="1.2" stroke-opacity="0.85" filter="url(#neonGlow)"/>
-          <circle cx="395" cy="195" r="4.5" fill="#F277D1" filter="url(#neonGlow)"/>
-          <circle cx="372" cy="213" r="3.5" fill="#00F0FF" filter="url(#neonGlow)"/>
-
-          <!-- Trilhas inferior direita (Rosa Neon & Verde-Lima) -->
-          <path d="M1000 250H785L735 200H555" stroke="#F277D1" stroke-width="1.6" filter="url(#neonGlow)"/>
-          <path d="M1000 268H770L720 218H610" stroke="#9FF24B" stroke-width="1" stroke-opacity="0.6"/>
-          <circle cx="555" cy="200" r="4.5" fill="#F277D1" filter="url(#neonGlow)"/>
-          <circle cx="610" cy="218" r="3" fill="#9FF24B"/>
-
-          <!-- Partículas luminosas (todos em pontinhos) -->
-          <circle cx="315" cy="52" r="2.5" fill="#F277D1"/>
-          <circle cx="535" cy="125" r="2.5" fill="#9FF24B"/>
-          <circle cx="420" cy="260" r="2.5" fill="#00F0FF"/>
-          <circle cx="607.5" cy="47.5" r="2.5" fill="#9FF24B" opacity="0.7"/>
-          <circle cx="347.5" cy="244.5" r="2.5" fill="#F277D1" opacity="0.7"/>
-        </svg>
-
-
         <div class="hero-z-content py-3">
           <div class="mb-3">
             <img src="{% static 'vagas/logo.png' %}" alt="DevElas" class="develas-logo-hero">
